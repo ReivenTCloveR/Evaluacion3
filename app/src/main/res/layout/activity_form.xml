@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewUser.FormActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/total"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="@string/ic_value"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editText_Monto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:autofillHints="@string/hintvalues"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/hintvalues"
+            android:inputType="textPersonName"
+            android:minHeight="50dp"
+            android:enabled="false"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/ic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/ic_value"
+                android:textSize="20sp"
+                tools:ignore="InefficientWeight" />
+
+            <EditText
+                android:id="@+id/edittxt_Arriendo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/category_1"
+                android:ems="10"
+                android:hint="@string/category_1"
+                android:inputType="number"
+                android:minHeight="50dp"
+                tools:ignore="VisualLintTextFieldSize" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="0"
+            android:orientation="horizontal"
+            tools:ignore="InefficientWeight">
+
+            <TextView
+                android:id="@+id/ic1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/ic_value"
+                android:textSize="20sp"
+                tools:ignore="NestedWeights" />
+
+            <EditText
+                android:id="@+id/edittxt_Alimentacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/category_2"
+                android:ems="10"
+                android:hint="@string/category_2"
+                android:inputType="number"
+                android:minHeight="50dp"
+                tools:ignore="VisualLintTextFieldSize" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="0"
+            android:orientation="horizontal"
+            tools:ignore="InefficientWeight">
+
+            <TextView
+                android:id="@+id/ic2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/ic_value"
+                android:textSize="20sp"
+                tools:ignore="NestedWeights" />
+
+            <EditText
+                android:id="@+id/edittxt_Transporte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/category_3"
+                android:ems="10"
+                android:hint="@string/category_3"
+                android:inputType="number"
+                android:minHeight="50dp"
+                tools:ignore="VisualLintTextFieldSize" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="0"
+            android:orientation="horizontal"
+            tools:ignore="InefficientWeight">
+
+            <TextView
+                android:id="@+id/ic3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/ic_value"
+                android:textSize="20sp"
+                tools:ignore="NestedWeights" />
+
+            <EditText
+                android:id="@+id/edittxt_Servicios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/category_4"
+                android:ems="10"
+                android:hint="@string/category_4"
+                android:inputType="number"
+                android:minHeight="50dp"
+                tools:ignore="VisualLintTextFieldSize" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="0"
+            android:orientation="horizontal"
+            tools:ignore="InefficientWeight">
+
+            <TextView
+                android:id="@+id/ic4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/ic_value"
+                android:textSize="20sp"
+                tools:ignore="NestedWeights" />
+
+            <EditText
+                android:id="@+id/edittxt_Educacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/category_5"
+                android:ems="10"
+                android:hint="@string/category_5"
+                android:inputType="number"
+                android:minHeight="50dp"
+                tools:ignore="VisualLintTextFieldSize" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="0"
+            android:orientation="horizontal"
+            tools:ignore="InefficientWeight">
+
+            <TextView
+                android:id="@+id/ic5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/ic_value"
+                android:textSize="20sp"
+                tools:ignore="NestedWeights" />
+
+            <EditText
+                android:id="@+id/edittxt_Deuda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/category_6"
+                android:ems="10"
+                android:hint="@string/category_6"
+                android:inputType="number"
+                android:minHeight="50dp"
+                tools:ignore="VisualLintTextFieldSize" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="0"
+            android:orientation="horizontal"
+            tools:ignore="InefficientWeight">
+
+            <TextView
+                android:id="@+id/ic6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/ic_value"
+                android:textSize="20sp"
+                tools:ignore="NestedWeights" />
+
+            <EditText
+                android:id="@+id/edittxt_Ahorro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/category_7"
+                android:ems="10"
+                android:hint="@string/category_7"
+                android:inputType="number"
+                android:minHeight="50dp"
+                tools:ignore="VisualLintTextFieldSize" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:backgroundTint="@color/color3"
+        android:text="@string/save"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/textInformation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/dateInformation" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/img_date"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:contentDescription="@string/date"
+                app:srcCompat="@drawable/ic_date" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/day"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+                <AutoCompleteTextView
+                    android:id="@+id/actxt_dayitem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

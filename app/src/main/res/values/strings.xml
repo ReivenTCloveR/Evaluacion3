@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Evaluacion3</string>
+
+    <!--PRESENTACION-->
+    <string name="Company">LircayHUB</string>
+    <string name="developer">Desarrollador</string>
+    <string name="developerName">Hugo Valdés</string>
+    <string name="Welcome">Bienvenido</string>
+
+    <!--PRESENTACION-->
+    <string name="dialog_content">Este monton es el presupuesto total con el cual usted dispone para su hogar</string>
+    <string name="alerta">Ingrese un monto</string>
+    <string name="day">día</string>
+
+    <!--VALIDADORES -->
+    <string name="monto_alerta">El monto excede su presupuesto</string>
+    <string name="dia_alerta">Ingrese fecha correcta</string>
+
+
+    <!--BTN -->
+    <string name="next">Siguiente</string>
+    <string name="save">Guardar</string>
+
+
+    <string name="total">Monto Total</string>
+    <string name="hintvalues">000.000.000</string>
+    <string name="ic_value">$</string>
+    <string name="dateInformation">Fecha de cierre de periodo</string>
+    <string name="date">DD/MM/AA</string>
+
+    <!-- CATEGORY -->
+    <string name="category_1">Arriendo</string>
+    <string name="category_2">Alimentacion</string>
+    <string name="category_3">Transporte</string>
+    <string name="category_4">Servicios Basicos</string>
+    <string name="category_5">Educacion</string>
+    <string name="category_6">Deudas</string>
+    <string name="category_7">Ahorro</string>
+    <string name="Fecha">Fecha</string>
+</resources>

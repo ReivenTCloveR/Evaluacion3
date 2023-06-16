@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="opciones_texto">
+        <item>@string/category_1</item>
+        <item>@string/category_2</item>
+        <item>@string/category_3</item>
+        <item>@string/category_4</item>
+        <item>@string/category_5</item>
+        <item>@string/category_6</item>
+        <item>@string/category_7</item>
+    </string-array>
+
+</resources>
