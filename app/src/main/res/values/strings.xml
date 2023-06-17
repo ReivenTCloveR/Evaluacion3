@@ -7,12 +7,11 @@
     <string name="developerName">Hugo Valdés</string>
     <string name="Welcome">Bienvenido</string>
 
-    <!--PRESENTACION-->
+    <!--PANTALLA EMERGENTE INFORMACION-->
     <string name="dialog_content">Este monton es el presupuesto total con el cual usted dispone para su hogar</string>
-    <string name="alerta">Ingrese un monto</string>
-    <string name="day">día</string>
 
     <!--VALIDADORES -->
+    <string name="alerta">Ingrese un monto</string>
     <string name="monto_alerta">El monto excede su presupuesto</string>
     <string name="dia_alerta">Ingrese fecha correcta</string>
 
@@ -23,6 +22,7 @@
 
 
     <string name="total">Monto Total</string>
+    <string name="day">día</string>
     <string name="hintvalues">000.000.000</string>
     <string name="ic_value">$</string>
     <string name="dateInformation">Fecha de cierre de periodo</string>
@@ -37,4 +37,15 @@
     <string name="category_6">Deudas</string>
     <string name="category_7">Ahorro</string>
     <string name="Fecha">Fecha</string>
+
+    <!-- MENU ITEMS -->
+    <string name="item0">Resumen</string>
+    <string name="item1">Presupuesto</string>
+    <string name="item2">Gastos</string>
+    <string name="item3">Indicadores</string>
+
+    <!-- HTTP REQUEST -->
+    <string name="htttp1">Feriados</string>
+    <string name="htttp2">Dolar</string>
+    <string name="htttp3">UF</string>
 </resources>

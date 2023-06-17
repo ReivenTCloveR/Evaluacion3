@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ResumenActivity">
+
+    <item
+        android:id="@+id/item0Resumen"
+        android:title="@string/item0" />
+    <item
+        android:id="@+id/item1Presupuesto"
+        android:title="@string/item1" />
+    <item
+        android:id="@+id/item2Gastos"
+        android:title="@string/item2" />
+    <item
+        android:id="@+id/item3Indicadores"
+        android:title="@string/item3" />
+
+</menu>
