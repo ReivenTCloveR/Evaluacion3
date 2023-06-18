@@ -35,7 +35,7 @@
             android:textSize="24sp" />
 
         <EditText
-            android:id="@+id/editText_Monto"
+            android:id="@+id/editText_MiMonto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0"
@@ -333,7 +333,7 @@
                 android:hint="@string/day"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
                 <AutoCompleteTextView
-                    android:id="@+id/actxt_dayitem"
+                    android:id="@+id/actxt_Midayitem"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="none"/>

@@ -40,7 +40,7 @@ public class FormActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_form);
 
         //XML --> JAVA
-        editText_Monto = findViewById(R.id.editText_Monto);
+        editText_Monto = findViewById(R.id.editText_MiMonto);
         edittxt_Arriendo = findViewById(R.id.edittxt_Arriendo);
         edittxt_Alimentacion = findViewById(R.id.edittxt_Alimentacion);
         edittxt_Transporte = findViewById(R.id.edittxt_Transporte);
@@ -48,7 +48,7 @@ public class FormActivity extends AppCompatActivity  {
         edittxt_Educacion = findViewById(R.id.edittxt_Educacion);
         edittxt_Deuda = findViewById(R.id.edittxt_Deuda);
         edittxt_Ahorro = findViewById(R.id.edittxt_Ahorro);
-        actxt_dayitem = findViewById(R.id.actxt_dayitem);
+        actxt_dayitem = findViewById(R.id.actxt_Midayitem);
 
         adapterItems = new ArrayAdapter<>(this,R.layout.item_list_day,item);
         actxt_dayitem.setAdapter(adapterItems);

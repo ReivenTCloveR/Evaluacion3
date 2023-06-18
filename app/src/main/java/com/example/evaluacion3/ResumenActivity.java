@@ -3,13 +3,15 @@ package com.example.evaluacion3;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
+import com.example.evaluacion3.Entidades.GastosActivity;
 import com.example.evaluacion3.Entidades.IndicadoresActivity;
+import com.example.evaluacion3.Entidades.PresupuestoActivity;
 
 public class ResumenActivity extends AppCompatActivity {
 
@@ -25,6 +27,7 @@ public class ResumenActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
@@ -32,17 +35,18 @@ public class ResumenActivity extends AppCompatActivity {
 
         switch (id) {
             case R.id.item0Resumen:
-                Toast.makeText(this, "Hola", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.item1Presupuesto:
-                Toast.makeText(this, "chao", Toast.LENGTH_SHORT).show();
+                Intent intent1 =new Intent(this, PresupuestoActivity.class);
+                startActivity(intent1);
                 return true;
             case R.id.item2Gastos:
-                Toast.makeText(this, "hi", Toast.LENGTH_SHORT).show();
+                Intent intent2 =new Intent(this, GastosActivity.class);
+                startActivity(intent2);
                 return true;
             case R.id.item3Indicadores:
-                Intent intent =new Intent(this, IndicadoresActivity.class);
-                startActivity(intent);
+                Intent intent3 =new Intent(this, IndicadoresActivity.class);
+                startActivity(intent3);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

@@ -9,7 +9,7 @@
 
     <!--PANTALLA EMERGENTE INFORMACION-->
     <string name="dialog_content">Este monton es el presupuesto total con el cual usted dispone para su hogar</string>
-
+    <string name="alertaforedit">El monton Total debe ser menor a la suma de los componentes </string>
     <!--VALIDADORES -->
     <string name="alerta">Ingrese un monto</string>
     <string name="monto_alerta">El monto excede su presupuesto</string>
@@ -19,6 +19,7 @@
     <!--BTN -->
     <string name="next">Siguiente</string>
     <string name="save">Guardar</string>
+    <string name="edit">Editar</string>
 
 
     <string name="total">Monto Total</string>
@@ -29,13 +30,13 @@
     <string name="date">DD/MM/AA</string>
 
     <!-- CATEGORY -->
-    <string name="category_1">Arriendo</string>
+    <string name="category_1">Arriendo o Hipoteca</string>
     <string name="category_2">Alimentacion</string>
     <string name="category_3">Transporte</string>
     <string name="category_4">Servicios Basicos</string>
     <string name="category_5">Educacion</string>
     <string name="category_6">Deudas</string>
-    <string name="category_7">Ahorro</string>
+    <string name="category_7">Ahorros e Inversiones</string>
     <string name="Fecha">Fecha</string>
 
     <!-- MENU ITEMS -->

@@ -4,6 +4,442 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:outlineSpotShadowColor="#009688"
     tools:context=".Entidades.PresupuestoActivity">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/total"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="@string/ic_value"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editText_MiMonto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:autofillHints="@string/hintvalues"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/hintvalues"
+            android:inputType="textPersonName"
+            android:minHeight="50dp"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_categoria1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/category_1"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/ic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/ic_value"
+                android:textSize="20sp"
+                tools:ignore="InefficientWeight" />
+
+            <EditText
+                android:id="@+id/edittxt_MiArriendo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/category_1"
+                android:ems="10"
+                android:hint="@string/category_1"
+                android:inputType="number"
+                android:minHeight="50dp"
+                tools:ignore="VisualLintTextFieldSize"
+
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="0"
+            android:orientation="horizontal"
+            tools:ignore="InefficientWeight">
+
+            <TextView
+                android:id="@+id/txt_categoria2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/category_2"
+                android:textSize="16sp"
+                tools:ignore="NestedWeights" />
+
+            <TextView
+                android:id="@+id/ic1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/ic_value"
+                android:textSize="20sp"
+                tools:ignore="NestedWeights" />
+
+            <EditText
+                android:id="@+id/edittxt_MiAlimentacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/category_2"
+                android:ems="10"
+                android:hint="@string/category_2"
+                android:inputType="number"
+                android:minHeight="50dp"
+                tools:ignore="VisualLintTextFieldSize"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="0"
+            android:orientation="horizontal"
+            tools:ignore="InefficientWeight">
+
+            <TextView
+                android:id="@+id/txt_categoria3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/category_3"
+                android:textSize="16sp"
+                tools:ignore="NestedWeights" />
+
+            <TextView
+                android:id="@+id/ic2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/ic_value"
+                android:textSize="20sp"
+                tools:ignore="NestedWeights" />
+
+            <EditText
+                android:id="@+id/edittxt_MiTransporte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/category_3"
+                android:ems="10"
+                android:hint="@string/category_3"
+                android:inputType="number"
+                android:minHeight="50dp"
+                tools:ignore="VisualLintTextFieldSize"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="0"
+            android:orientation="horizontal"
+            tools:ignore="InefficientWeight">
+
+            <TextView
+                android:id="@+id/txt_categoria4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/category_4"
+                android:textSize="16sp"
+                tools:ignore="NestedWeights" />
+
+            <TextView
+                android:id="@+id/ic3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/ic_value"
+                android:textSize="20sp"
+                tools:ignore="NestedWeights" />
+
+            <EditText
+                android:id="@+id/edittxt_MiServicios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/category_4"
+                android:ems="10"
+                android:hint="@string/category_4"
+                android:inputType="number"
+                android:minHeight="50dp"
+                tools:ignore="VisualLintTextFieldSize" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="0"
+            android:orientation="horizontal"
+            tools:ignore="InefficientWeight">
+
+            <TextView
+                android:id="@+id/txt_categoria5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/category_5"
+                android:textSize="16sp"
+                tools:ignore="NestedWeights" />
+
+            <TextView
+                android:id="@+id/ic4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/ic_value"
+                android:textSize="20sp"
+                tools:ignore="NestedWeights" />
+
+            <EditText
+                android:id="@+id/edittxt_MiEducacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/category_5"
+                android:ems="10"
+                android:hint="@string/category_5"
+                android:inputType="number"
+                android:minHeight="50dp"
+                tools:ignore="VisualLintTextFieldSize"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="0"
+            android:orientation="horizontal"
+            tools:ignore="InefficientWeight">
+
+            <TextView
+                android:id="@+id/txt_categoria6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/category_6"
+                android:textSize="16sp"
+                tools:ignore="NestedWeights" />
+
+            <TextView
+                android:id="@+id/ic5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/ic_value"
+                android:textSize="20sp"
+                tools:ignore="NestedWeights" />
+
+            <EditText
+                android:id="@+id/edittxt_Deuda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/category_6"
+                android:ems="10"
+                android:hint="@string/category_6"
+                android:inputType="number"
+                android:minHeight="50dp"
+                tools:ignore="VisualLintTextFieldSize"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="0"
+            android:orientation="horizontal"
+            tools:ignore="InefficientWeight">
+
+            <TextView
+                android:id="@+id/txt_categoria7"
+                android:layout_width="186dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/category_7"
+                android:textSize="16sp"
+                tools:ignore="NestedWeights" />
+
+            <TextView
+                android:id="@+id/ic6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/ic_value"
+                android:textSize="20sp"
+                tools:ignore="NestedWeights" />
+
+            <EditText
+                android:id="@+id/edittxt_Ahorro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/category_7"
+                android:ems="10"
+                android:hint="@string/category_7"
+                android:inputType="number"
+                android:minHeight="50dp"
+                tools:ignore="VisualLintTextFieldSize"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_save_change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="@color/color3"
+        android:text="@string/save"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/textInformation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/dateInformation" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/img_date"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:contentDescription="@string/date"
+                app:srcCompat="@drawable/ic_date" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/day">
+
+                <AutoCompleteTextView
+                    android:id="@+id/actxt_Midayitem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatbtn_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        android:clickable="true"
+        android:contentDescription="@string/edit"
+        app:backgroundTint="@color/color3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_edit"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/txtTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="80dp"
+        android:text="@string/total"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
