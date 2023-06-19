@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="@string/total"
+        android:text="@string/MontoNoDestinado"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,11 +41,11 @@
             android:layout_weight="0"
             android:autofillHints="@string/hintvalues"
             android:ems="10"
+            android:enabled="false"
             android:gravity="center"
             android:hint="@string/hintvalues"
             android:inputType="textPersonName"
             android:minHeight="50dp"
-            android:enabled="false"
             tools:ignore="DuplicateSpeakableTextCheck" />
     </LinearLayout>
 
@@ -68,6 +68,15 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="5dp"
             android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="0"
+                android:contentDescription="@string/category_1"
+                app:srcCompat="@drawable/ic_arriendo" />
 
             <TextView
                 android:id="@+id/ic"
@@ -101,6 +110,16 @@
             android:orientation="horizontal"
             tools:ignore="InefficientWeight">
 
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="0"
+                android:contentDescription="@string/category_2"
+                app:srcCompat="@drawable/ic_alimentacion"
+                tools:ignore="NestedWeights" />
+
             <TextView
                 android:id="@+id/ic1"
                 android:layout_width="wrap_content"
@@ -119,7 +138,7 @@
                 android:hint="@string/category_2"
                 android:inputType="number"
                 android:minHeight="50dp"
-                tools:ignore="VisualLintTextFieldSize" />
+                tools:ignore="VisualLintTextFieldSize,DuplicateSpeakableTextCheck" />
 
         </LinearLayout>
 
@@ -132,6 +151,15 @@
             android:layout_weight="0"
             android:orientation="horizontal"
             tools:ignore="InefficientWeight">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="0"
+                android:contentDescription="@string/category_3"
+                app:srcCompat="@drawable/ic_transporte" />
 
             <TextView
                 android:id="@+id/ic2"
@@ -151,7 +179,7 @@
                 android:hint="@string/category_3"
                 android:inputType="number"
                 android:minHeight="50dp"
-                tools:ignore="VisualLintTextFieldSize" />
+                tools:ignore="VisualLintTextFieldSize,DuplicateSpeakableTextCheck" />
 
         </LinearLayout>
 
@@ -164,6 +192,15 @@
             android:layout_weight="0"
             android:orientation="horizontal"
             tools:ignore="InefficientWeight">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="0"
+                android:contentDescription="@string/category_4"
+                app:srcCompat="@drawable/ic_serviciosbasicos" />
 
             <TextView
                 android:id="@+id/ic3"
@@ -183,7 +220,7 @@
                 android:hint="@string/category_4"
                 android:inputType="number"
                 android:minHeight="50dp"
-                tools:ignore="VisualLintTextFieldSize" />
+                tools:ignore="VisualLintTextFieldSize,DuplicateSpeakableTextCheck" />
 
         </LinearLayout>
 
@@ -196,6 +233,15 @@
             android:layout_weight="0"
             android:orientation="horizontal"
             tools:ignore="InefficientWeight">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="0"
+                android:contentDescription="@string/category_5"
+                app:srcCompat="@drawable/ic_education" />
 
             <TextView
                 android:id="@+id/ic4"
@@ -229,6 +275,15 @@
             android:orientation="horizontal"
             tools:ignore="InefficientWeight">
 
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="0"
+                android:contentDescription="@string/category_6"
+                app:srcCompat="@drawable/ic_gastos" />
+
             <TextView
                 android:id="@+id/ic5"
                 android:layout_width="wrap_content"
@@ -261,10 +316,19 @@
             android:orientation="horizontal"
             tools:ignore="InefficientWeight">
 
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:contentDescription="@string/category_7"
+                app:srcCompat="@drawable/ic_ahorros" />
+
             <TextView
                 android:id="@+id/ic6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="0"
                 android:text="@string/ic_value"
                 android:textSize="20sp"
@@ -279,7 +343,7 @@
                 android:hint="@string/category_7"
                 android:inputType="number"
                 android:minHeight="50dp"
-                tools:ignore="VisualLintTextFieldSize" />
+                tools:ignore="VisualLintTextFieldSize,DuplicateSpeakableTextCheck" />
 
         </LinearLayout>
 
@@ -327,16 +391,19 @@
                 android:layout_marginTop="10dp"
                 android:contentDescription="@string/date"
                 app:srcCompat="@drawable/ic_date" />
+
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/day"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+                android:hint="@string/day">
+
                 <AutoCompleteTextView
                     android:id="@+id/actxt_Midayitem"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="none"/>
+                    android:inputType="none"
+                    tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
 

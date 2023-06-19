@@ -41,7 +41,7 @@ public class PresupuestoActivity extends AppCompatActivity {
 
     FloatingActionButton floatbtn_edit;
     Button btn_save_change;
-    TextView txtTotal;
+    TextView txtTotal, txt_MontoNoDestinado;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -61,7 +61,7 @@ public class PresupuestoActivity extends AppCompatActivity {
         actxt_Midayitem = findViewById(R.id.actxt_Midayitem);
 
         txtTotal = findViewById(R.id.txtTotal);
-
+        txt_MontoNoDestinado = findViewById(R.id.txt_MontoNoDestinado);
         floatbtn_edit = findViewById(R.id.floatbtn_edit);
         btn_save_change = findViewById(R.id.btn_save_change);
         //ESTADO DE LOS EDITXT
@@ -213,7 +213,7 @@ public class PresupuestoActivity extends AppCompatActivity {
         btn_save_change.setVisibility(View.VISIBLE);
         floatbtn_edit.setVisibility(View.GONE);
         txtTotal.setVisibility(View.VISIBLE);
-
+        txt_MontoNoDestinado.setVisibility(View.VISIBLE);
         adapterItems = new ArrayAdapter<>(this,R.layout.item_list_day,item);
         actxt_Midayitem.setAdapter(adapterItems);
 
@@ -234,5 +234,6 @@ public class PresupuestoActivity extends AppCompatActivity {
         actxt_Midayitem.setEnabled(false);
         btn_save_change.setVisibility(View.GONE);
         txtTotal.setVisibility(View.GONE);
+        txt_MontoNoDestinado.setVisibility(View.GONE);
     }
 }

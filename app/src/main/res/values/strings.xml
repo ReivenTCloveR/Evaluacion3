@@ -23,6 +23,7 @@
 
 
     <string name="total">Monto Total</string>
+    <string name="MontoNoDestinado">Monto No Destinado</string>
     <string name="day">día</string>
     <string name="hintvalues">000.000.000</string>
     <string name="ic_value">$</string>
