@@ -10,7 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.evaluacion3.Entidades.GastosActivity;
-import com.example.evaluacion3.Entidades.IndicadoresActivity;
+import com.example.evaluacion3.Entidades.MainActivity;
 import com.example.evaluacion3.Entidades.PresupuestoActivity;
 
 public class ResumenActivity extends AppCompatActivity {
@@ -45,7 +45,7 @@ public class ResumenActivity extends AppCompatActivity {
                 startActivity(intent2);
                 return true;
             case R.id.item3Indicadores:
-                Intent intent3 =new Intent(this, IndicadoresActivity.class);
+                Intent intent3 =new Intent(this, MainActivity.class);
                 startActivity(intent3);
                 return true;
             default:

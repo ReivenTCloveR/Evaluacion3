@@ -2,7 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-feature android:name="android.hardware.location.gps" />
+
 
     <application
         android:allowBackup="true"
@@ -14,26 +18,41 @@
         android:theme="@style/Theme.Evaluacion3"
         tools:ignore="ObsoleteSdkInt"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAE7uRXsK1VyOK87Qffa4aJfW973APOXsw" />
+
+        <activity
+            android:name=".Entidades.Gasto.viewGastoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Entidades.Gasto.NewGastoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Entidades.MainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.Evaluacion3.NoActionBar" />
         <activity
             android:name=".Entidades.PresupuestoActivity"
             android:exported="false">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".ResumenActivity" />
-    </activity>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ResumenActivity" />
+        </activity>
         <activity
             android:name=".Entidades.IndicadoresActivity"
             android:exported="false">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".ResumenActivity" />
-    </activity>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ResumenActivity" />
+        </activity>
         <activity
             android:name=".Entidades.GastosActivity"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".ResumenActivity" />
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ResumenActivity" />
         </activity>
         <activity
             android:name=".ResumenActivity"

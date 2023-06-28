@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:orientation="vertical"
+    tools:context=".Entidades.Gasto.NewGastoActivity">
+
+
+    <EditText
+        android:id="@+id/edittxt_Producto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0"
+        android:autofillHints="@string/product"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/product"
+        android:inputType="textPersonName"
+        android:minHeight="50dp"
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_weight="0"
+        android:orientation="horizontal"
+        android:paddingStart="5dp"
+        tools:ignore="RtlSymmetry">
+
+        <TextView
+            android:id="@+id/ic3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="@string/ic_value"
+            android:textSize="20sp"
+            tools:ignore="InefficientWeight,NestedWeights" />
+
+        <EditText
+            android:id="@+id/edittxt_Costo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:autofillHints="@string/hintvalues"
+            android:ems="10"
+            android:hint="@string/hintvalues"
+            android:inputType="number"
+            android:minHeight="50dp"
+            tools:ignore="VisualLintTextFieldSize,DuplicateSpeakableTextCheck" />
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:hint="@string/category"
+        android:padding="15dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/actxt_Categoryitem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_saveNewGasto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:layout_weight="0"
+        android:paddingHorizontal="20dp"
+        android:text="@string/save"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/txtlat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/txtlong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="TextView" />
+
+</LinearLayout>
