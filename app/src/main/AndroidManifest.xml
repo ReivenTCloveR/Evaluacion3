@@ -5,8 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-feature android:name="android.hardware.location.gps" />
 
+    <uses-feature android:name="android.hardware.location.gps" />
 
     <application
         android:allowBackup="true"
@@ -18,16 +18,36 @@
         android:theme="@style/Theme.Evaluacion3"
         tools:ignore="ObsoleteSdkInt"
         tools:targetApi="31">
+
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAE7uRXsK1VyOK87Qffa4aJfW973APOXsw" />
 
         <activity
             android:name=".Entidades.Gasto.viewGastoActivity"
-            android:exported="false" />
+            android:exported="false">
+        <meta-data
+        android:name="android.support.PARENT_ACTIVITY"
+        android:value=".Entidades.GastosActivity" />
+        </activity>
         <activity
             android:name=".Entidades.Gasto.NewGastoActivity"
-            android:exported="false" />
+            android:exported="false">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Entidades.GastosActivity" />
+        </activity>
         <activity
             android:name=".Entidades.MainActivity"
             android:exported="false"

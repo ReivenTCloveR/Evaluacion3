@@ -57,7 +57,7 @@ public class PresupuestoActivity extends AppCompatActivity {
         edittxt_MiServicios = findViewById(R.id.edittxt_MiServicios);
         edittxt_MiEducacion = findViewById(R.id.edittxt_MiEducacion);
         edittxt_Deuda = findViewById(R.id.edittxt_Deuda);
-        edittxt_Ahorro = findViewById(R.id.edittxt_Ahorro);
+        edittxt_Ahorro = findViewById(R.id.txtResumenAhorro);
         actxt_Midayitem = findViewById(R.id.actxt_Midayitem);
 
         txtTotal = findViewById(R.id.txtTotal);

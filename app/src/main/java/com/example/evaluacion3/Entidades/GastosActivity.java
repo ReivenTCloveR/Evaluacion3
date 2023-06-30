@@ -46,6 +46,8 @@ public class GastosActivity extends AppCompatActivity {
 
     public void IrAddGasto(View view) {
         Intent i = new Intent(this, NewGastoActivity.class);
-        startActivity(i);    }
+        startActivity(i);
+
+    }
 
 }

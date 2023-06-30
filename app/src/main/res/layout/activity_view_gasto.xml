@@ -8,18 +8,18 @@
     tools:context=".Entidades.Gasto.viewGastoActivity">
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/IV_Categoria"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
+        android:contentDescription="@string/category"
         android:src="@drawable/ic_ahorros"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/category" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txtNameGasto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -28,10 +28,11 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+        app:layout_constraintTop_toBottomOf="@+id/IV_Categoria" />
 
 
     <LinearLayout
+        android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -40,7 +41,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/txtNameGasto"
         tools:ignore="InefficientWeight">
 
 
@@ -54,7 +55,7 @@
             tools:ignore="NestedWeights" />
 
         <EditText
-            android:id="@+id/edittxt_Precio"
+            android:id="@+id/edittxt_Alimentacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints="@string/MontoNoDestinado"
@@ -66,18 +67,78 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="369dp"
+        android:id="@+id/linearLayout4"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="40dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
-      <FrameLayout
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:id="@+id/mapa"/>
+        <fragment
+            android:id="@+id/mapa"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            map:cameraZoom="10"
+            map:uiRotateGestures="true"
+            map:uiZoomControls="true"
+            ></fragment>
 
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabtn_delet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:contentDescription="delet"
+        android:tint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
+        app:shapeAppearanceOverlay="@style/StyleBtn"
+        map:srcCompat="@android:drawable/ic_menu_delete"
+        tools:ignore="HardcodedText" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabtn_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:tint="@color/white"
+        android:contentDescription="@string/edit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:shapeAppearanceOverlay="@style/StyleBtn1"
+        map:srcCompat="@drawable/ic_edit" />
+
+    <LinearLayout
+        android:layout_width="297dp"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextSizeCheck">
+
+        <Button
+            android:id="@+id/btn_saveEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/save"
+            tools:ignore="ButtonStyle,TextContrastCheck" />
+
+        <Button
+            android:id="@+id/btn_cancelEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@android:string/cancel"
+            tools:ignore="ButtonOrder,ButtonStyle,TextContrastCheck" />
     </LinearLayout>
 
 

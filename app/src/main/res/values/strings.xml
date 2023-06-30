@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Evaluacion3</string>
+    <string name="app_name">Organizame</string>
 
     <!--PRESENTACION-->
     <string name="Company">LircayHUB</string>
@@ -32,6 +32,10 @@
     <string name="date">DD/MM/AA</string>
     <string name="Gasto">Gasto:</string>
 
+    <!--Resumen-->
+    <string name="presupuestoxgasto">PRESUPUESTO / GASTOS</string>
+
+
     <string name="category">Categoria</string>
     <!-- CATEGORY -->
     <string name="category_1">Arriendo o Hipoteca</string>
@@ -53,6 +57,9 @@
     <string name="htttp1">Feriados</string>
     <string name="htttp2">Dolar</string>
     <string name="htttp3">UF</string>
+    <string name="htttp1Resumen">Feriado:</string>
+    <string name="htttp2Resumen">Dolar:</string>
+    <string name="htttp3Resumen">UF:</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
@@ -61,5 +68,6 @@
     <string name="product">producto</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">MapsActivity</string>
 
 </resources>

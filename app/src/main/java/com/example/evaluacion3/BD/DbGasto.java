@@ -98,13 +98,13 @@ public class DbGasto extends DbHelper {
         return gasto;
     }
 
-    public boolean editGasto(int id, String producto, int precio, String tipo) {
+    public boolean editGasto(int id, int precio) {
 
         boolean ready;
         DbHelper dbhelper = new DbHelper(context);
         this.db = dbhelper.getWritableDatabase();
         try {
-            db.execSQL("UPDATE " + TABLE_GASTOS + " SET producto ='" + producto + "', precio ='" + precio + "', tipo ='" + tipo + "' WHERE id_gasto = '" + id + "'");
+            db.execSQL("UPDATE " + TABLE_GASTOS + " SET  precio ='" + precio + "' WHERE id_gasto = '" + id + "'");
             ready = true;
         } catch (Exception ex) {
             ex.toString();
@@ -132,6 +132,29 @@ public class DbGasto extends DbHelper {
         }
 
         return ready;
+    }
+
+
+    @SuppressLint("Range")
+    public int getTotalByType(String tipo) {
+        int total = 0;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] columns = {"SUM(precio) AS total"};
+        String selection = "tipo = ?";
+        String[] selectionArgs = {tipo};
+        String groupBy = "tipo";
+
+        Cursor cursor = db.query(TABLE_GASTOS, columns, selection, selectionArgs, groupBy, null, null);
+
+        if (cursor.moveToFirst()) {
+            total = cursor.getInt(cursor.getColumnIndex("total"));
+        }
+
+        cursor.close();
+        db.close();
+
+        return total;
     }
 
 

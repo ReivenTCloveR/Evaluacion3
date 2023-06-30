@@ -130,7 +130,7 @@
                 tools:ignore="NestedWeights" />
 
             <EditText
-                android:id="@+id/edittxt_Precio"
+                android:id="@+id/edittxt_Alimentacion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="@string/category_2"
@@ -335,7 +335,7 @@
                 tools:ignore="NestedWeights" />
 
             <EditText
-                android:id="@+id/edittxt_Ahorro"
+                android:id="@+id/txtResumenAhorro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="@string/category_7"

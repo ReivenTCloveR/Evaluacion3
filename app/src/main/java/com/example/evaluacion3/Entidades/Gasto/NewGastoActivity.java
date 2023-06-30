@@ -27,7 +27,6 @@ import com.example.evaluacion3.R;
 public class NewGastoActivity extends AppCompatActivity {
 
     EditText edittxt_Producto, edittxt_Costo;
-    TextView txtlong, txtlat;
     AutoCompleteTextView actxt_categoryitem;
     String[] categoryArray;
     ArrayAdapter<String> adapterItems;
@@ -52,8 +51,6 @@ public class NewGastoActivity extends AppCompatActivity {
         actxt_categoryitem.setAdapter(adapterItems);
 
 
-        txtlat = findViewById(R.id.txtlat);
-        txtlong = findViewById(R.id.txtlong);
 
         int permissionCheck =ContextCompat.checkSelfPermission(NewGastoActivity.this,Manifest.permission.ACCESS_FINE_LOCATION);
 
@@ -94,15 +91,13 @@ public class NewGastoActivity extends AppCompatActivity {
 
             locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,0,0,locationListener);
 
-            txtlat.setText(String.valueOf(latitud));
-            txtlong.setText(String.valueOf(longitud));
             String category = actxt_categoryitem.getText().toString();
 
 
             if(latitud !=0 && latitud != 0 && !TextUtils.isEmpty(category)){
 
-                DbGasto dbProductos = new DbGasto(NewGastoActivity.this);
-                long id = dbProductos.insertarGasto(edittxt_Producto.getText().toString(), Integer.parseInt(edittxt_Costo.getText().toString()), (int) longitud, (int) latitud, category);
+                DbGasto dbProducto = new DbGasto(NewGastoActivity.this);
+                long id = dbProducto.insertarGasto(edittxt_Producto.getText().toString(), Integer.parseInt(edittxt_Costo.getText().toString()), (int) longitud, (int) latitud, category);
 
                 if (id > 0) {
                     Toast.makeText(this, "SE AÑADIO EL PRODUCTO A SU LISTA", Toast.LENGTH_SHORT).show();

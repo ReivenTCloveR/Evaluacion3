@@ -85,18 +85,6 @@
         android:text="@string/save"
         tools:ignore="TextContrastCheck" />
 
-    <TextView
-        android:id="@+id/txtlat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:text="TextView" />
 
-    <TextView
-        android:id="@+id/txtlong"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:text="TextView" />
 
 </LinearLayout>
