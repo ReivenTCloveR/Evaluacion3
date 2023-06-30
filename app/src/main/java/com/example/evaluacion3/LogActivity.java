@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
@@ -13,6 +14,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.evaluacion3.BD.DbGasto;
+import com.example.evaluacion3.BD.DbHelper;
 import com.example.evaluacion3.NewUser.WelcomeNewUserActivity;
 
 public class LogActivity extends AppCompatActivity {
@@ -24,6 +27,11 @@ public class LogActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_log);
+
+        DbHelper dbHelper = new DbHelper(this);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+
 
         //add anim
         Animation animUp = AnimationUtils.loadAnimation(this,R.anim.moveup);
@@ -51,6 +59,8 @@ public class LogActivity extends AppCompatActivity {
                 finish();
             }
         }, 3000);
+
+
 
 
     }

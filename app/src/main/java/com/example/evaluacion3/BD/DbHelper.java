@@ -20,8 +20,16 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
+        String createTableQuery = "CREATE TABLE IF NOT EXISTS " + TABLE_GASTOS + "(" +
+                "id_gasto INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "producto TEXT NOT NULL," +
+                "precio INTEGER NOT NULL," +
+                "longitud DOUBLE NOT NULL," +
+                "latitud DOUBLE NOT NULL," +
+                "tipo TEXT NOT NULL)";
+        sqLiteDatabase.execSQL(createTableQuery);
 
-        sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_GASTOS + "(" +
+        sqLiteDatabase.execSQL("CREATE TABLE  " + TABLE_GASTOS + "(" +
                 "id_gasto INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "producto TEXT NOT NULL," +
                 "precio INTEGER NOT NULL," +

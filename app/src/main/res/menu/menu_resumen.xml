@@ -15,5 +15,8 @@
     <item
         android:id="@+id/item3Indicadores"
         android:title="@string/item3" />
+    <item
+        android:id="@+id/item4DeletAcc"
+        android:title="@string/item4" />
 
 </menu>

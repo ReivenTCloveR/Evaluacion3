@@ -21,7 +21,6 @@ public class DbGasto extends DbHelper {
         this.context = context;
     }
 
-
     public long insertarGasto(String producto, int precio, int longitud, int latitud, String tipo) {
 
         long id = 0;
@@ -156,6 +155,14 @@ public class DbGasto extends DbHelper {
 
         return total;
     }
+
+    public void deleteAllFromTable(String tableName) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DELETE FROM " + tableName);
+        //db.close();
+    }
+
+
 
 
 

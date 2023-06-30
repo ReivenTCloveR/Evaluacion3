@@ -1,13 +1,17 @@
 package com.example.evaluacion3;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
@@ -94,7 +98,7 @@ public class ResumenActivity extends AppCompatActivity {
         String Cadena3 = transporte+" / "+gastoTransporte;
         String Cadena4 = servicios+" / "+gastoServicio;
         String Cadena5 = educacion+" / "+gastoEducacion;
-        String Cadena6 = deuda+" / "+gastoAlimentacion;
+        String Cadena6 = deuda+" / "+gastoDeuda;
         String Cadena7 = ahorro+" / "+gastoAhorro;
 
         //MOSTRAR LOS VALORES GUARDADOS
@@ -106,6 +110,7 @@ public class ResumenActivity extends AppCompatActivity {
         txtResumenDeuda.setText(Cadena6);
         txtResumenAhorro.setText(Cadena7);
 
+        //falta texto
 
         mostrarFeriado();
         mostrarDolar();
@@ -260,7 +265,7 @@ public class ResumenActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         int id = item.getItemId();
-
+        DbGasto dbGasto = new DbGasto(this);
         switch (id) {
             case R.id.item0Resumen:
                 return true;
@@ -276,8 +281,34 @@ public class ResumenActivity extends AppCompatActivity {
                 Intent intent3 =new Intent(this, IndicadoresActivity.class);
                 startActivity(intent3);
                 return true;
+            case R.id.item4DeletAcc:
+                AlertDialog.Builder builder = new AlertDialog.Builder(ResumenActivity.this);
+                builder.setTitle("Eliminar cuenta")
+                        .setMessage("¿Está seguro que desea eliminar la cuenta?")
+                        .setPositiveButton("Sí", (dialog, which) -> {
+                            SharedPreferences preferences = getSharedPreferences("MyPreferences", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = preferences.edit();
+                            editor.remove("Usuario");
+                            editor.apply();
+                            dbGasto.deleteAllFromTable("t_gastos");
+                            Intent intent = new Intent(this, LogActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(intent);
+                            finish();
+
+                            dialog.dismiss();
+                        })
+                        .setNegativeButton("No", (dialog, which) -> dialog.dismiss())
+                        .show();
+
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
+
+
+
 }

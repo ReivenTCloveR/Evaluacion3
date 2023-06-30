@@ -17,10 +17,10 @@ import com.example.evaluacion3.BD.DbHelper;
 import com.example.evaluacion3.Entidades.Gasto.NewGastoActivity;
 import com.example.evaluacion3.R;
 
-public class GastosActivity extends AppCompatActivity {
+public class GastosActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
     RecyclerView listaGasto;
-    SearchView svBuscar;
+    SearchView seach_gasto;
     Adapter adapter;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -41,13 +41,30 @@ public class GastosActivity extends AppCompatActivity {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
 
+        //SeachBtn
+        seach_gasto = findViewById(R.id.seach_gasto);
+        seach_gasto.setOnQueryTextListener(this);
+
+    }
+
+
+    //Metodos de buscar
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        adapter.filtro(newText);
+        return false;
     }
 
 
     public void IrAddGasto(View view) {
         Intent i = new Intent(this, NewGastoActivity.class);
         startActivity(i);
-
     }
+
 
 }

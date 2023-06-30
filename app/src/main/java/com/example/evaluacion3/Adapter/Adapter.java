@@ -1,5 +1,6 @@
 package com.example.evaluacion3.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -16,6 +17,8 @@ import com.example.evaluacion3.Entidades.Gasto.viewGastoActivity;
 import com.example.evaluacion3.R;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
@@ -46,6 +49,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
         holder.MostrarProducto.setText(txtProducto);
         holder.MostrarPrecio.setText(String.valueOf(txtPrecio));
+
 
         Context context = holder.itemView.getContext();
         if (tipo.equals(context.getString(R.string.category_1))) {
@@ -91,5 +95,26 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         }
 
     }
+
+
+    //SeachBtn
+    @SuppressLint("NotifyDataSetChanged")
+    public void filtro(String txtBuscar) {
+        int longitud = txtBuscar.length();
+        if (longitud == 0) {
+            list.clear();
+            list.addAll(originallist);
+        } else {
+            List<Gasto> colleccion = list.stream()
+                    .filter(i -> i.getProducto().toLowerCase().contains(txtBuscar.toLowerCase()) ||
+                            i.getTipo().equalsIgnoreCase(txtBuscar))
+                    .collect(Collectors.toList());
+            list.clear();
+            list.addAll(colleccion);
+        }
+        notifyDataSetChanged();
+    }
+
+
 
 }

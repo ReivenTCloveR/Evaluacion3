@@ -52,6 +52,7 @@
     <string name="item1">Presupuesto</string>
     <string name="item2">Gastos</string>
     <string name="item3">Indicadores</string>
+    <string name="item4">Eliminar Cuenta</string>
 
     <!-- HTTP REQUEST -->
     <string name="htttp1">Feriados</string>
