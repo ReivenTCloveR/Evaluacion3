@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -32,6 +33,7 @@ public class NewGastoActivity extends AppCompatActivity {
     ArrayAdapter<String> adapterItems;
     Button btn_save;
 
+    int valor, total;
     private double latitud;
     private double longitud;
 
@@ -52,6 +54,7 @@ public class NewGastoActivity extends AppCompatActivity {
 
 
 
+
         int permissionCheck =ContextCompat.checkSelfPermission(NewGastoActivity.this,Manifest.permission.ACCESS_FINE_LOCATION);
 
         // Verificar y solicitar permisos de ubicación si no están concedidos
@@ -63,6 +66,10 @@ public class NewGastoActivity extends AppCompatActivity {
                 ActivityCompat.requestPermissions(NewGastoActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},1);
             }
         }
+
+
+
+
 
 
 
@@ -92,17 +99,15 @@ public class NewGastoActivity extends AppCompatActivity {
             locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,0,0,locationListener);
 
             String category = actxt_categoryitem.getText().toString();
-
-
             if(latitud !=0 && latitud != 0 && !TextUtils.isEmpty(category)){
 
                 DbGasto dbProducto = new DbGasto(NewGastoActivity.this);
-                long id = dbProducto.insertarGasto(edittxt_Producto.getText().toString(), Integer.parseInt(edittxt_Costo.getText().toString()), (int) longitud, (int) latitud, category);
+                long id = dbProducto.insertarGasto(edittxt_Producto.getText().toString(),Integer.parseInt(edittxt_Costo.getText().toString()), (int) longitud, (int) latitud, category);
 
                 if (id > 0) {
-                    Toast.makeText(this, "SE AÑADIO EL PRODUCTO A SU LISTA", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.addProducto, Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(this, "ERROR AL AÑADIR EL PRODUCTO", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.addFail, Toast.LENGTH_SHORT).show();
                 }
             }
         });

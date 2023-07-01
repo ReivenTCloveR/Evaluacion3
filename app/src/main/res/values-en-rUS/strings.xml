@@ -1,6 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Organizame</string>
-
     <!--PRESENTACION-->
     <string name="Company">LircayHUB</string>
     <string name="developer">Desarrollador</string>
@@ -11,14 +11,9 @@
     <string name="dialog_content">Este monton es el presupuesto total con el cual usted dispone para su hogar</string>
     <string name="alertaforedit">El monton Total debe ser menor a la suma de los componentes </string>
     <string name="alertafocategoria"> Has excedido el monto de una categoría </string>
-
-    <!--PANTALLA EMERGENTE BTN-->
-    <string name="IngreseMonto"> Ingrese un Monto </string>
-    <string name="Aceptar"> Aceptar </string>
     <string name="EliminarCuenta"> Eliminar cuenta </string>
     <string name="SeguroEliminar"> ¿Está seguro que desea eliminar la cuenta? </string>
     <string name="Si">Sí</string>
-
     <!--TOAST-->
     <string name="addProducto">SE AÑADIO EL PRODUCTO A SU LISTA</string>
     <string name="addFail">ERROR AL AÑADIR EL PRODUCTO</string>
@@ -27,6 +22,15 @@
     <string name="Nombre">Nombre: </string>
     <string name="Fechas">Fecha: </string>
     <string name="Valor">Valor: </string>
+
+
+
+
+    <!--PANTALLA EMERGENTE BTN-->
+    <string name="IngreseMonto"> Ingrese un Monto </string>
+    <string name="Aceptar"> Aceptar </string>
+
+
     <!--VALIDADORES -->
     <string name="alerta">Ingrese un monto</string>
     <string name="monto_alerta">El monto excede su presupuesto</string>
@@ -95,5 +99,4 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_maps">MapsActivity</string>
-
 </resources>

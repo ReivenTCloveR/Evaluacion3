@@ -5,25 +5,24 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
+
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.example.evaluacion3.BD.DbGasto;
 import com.example.evaluacion3.BD.DbHelper;
-import com.example.evaluacion3.Entidades.Gasto.NewGastoActivity;
 import com.example.evaluacion3.Entidades.GastosActivity;
 import com.example.evaluacion3.Entidades.IndicadoresActivity;
-import com.example.evaluacion3.Entidades.MainActivity;
 import com.example.evaluacion3.Entidades.PresupuestoActivity;
 
 import org.json.JSONArray;
@@ -45,6 +44,7 @@ public class ResumenActivity extends AppCompatActivity {
     TextView txthttpFeriado, txthttpDolar, txthttpUF;
     EditText txtResumenArriendp,txtResumenAlimentacion, txtResumenTransport, edittxt_Costo, txtResumenEducacion, txtResumenAhorro, txtResumenDeuda;
     String[] categoryArray;
+    ImageView alert1, alert2, alert3, alert4, alert5, alert6, alert7;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +63,15 @@ public class ResumenActivity extends AppCompatActivity {
         txtResumenDeuda = findViewById(R.id.txtResumenDeuda);
         txtResumenAhorro = findViewById(R.id.txtResumenAhorro);
 
+        alert1 = findViewById(R.id.alert1);
+        alert2 = findViewById(R.id.alert2);
+        alert3 = findViewById(R.id.alert3);
+        alert4 = findViewById(R.id.alert4);
+        alert5 = findViewById(R.id.alert5);
+        alert6 = findViewById(R.id.alert6);
+        alert7 = findViewById(R.id.alert7);
+
+        deshabilitarAlert();
 
         //instanciar la base de datos
         DbHelper dbHelper = new DbHelper(this);
@@ -86,11 +95,11 @@ public class ResumenActivity extends AppCompatActivity {
         DbGasto dbGasto = new DbGasto(ResumenActivity.this);
         int gastoArriendo = dbGasto.getTotalByType(categoryArray[0]);
         int gastoAlimentacion = dbGasto.getTotalByType(categoryArray[1]);
-        int gastoTransporte = dbGasto.getTotalByType(categoryArray[3]);
-        int gastoServicio = dbGasto.getTotalByType(categoryArray[4]);
-        int gastoEducacion = dbGasto.getTotalByType(categoryArray[5]);
-        int gastoDeuda = dbGasto.getTotalByType(categoryArray[6]);
-        int gastoAhorro = dbGasto.getTotalByType(categoryArray[3]);
+        int gastoTransporte = dbGasto.getTotalByType(categoryArray[2]);
+        int gastoServicio = dbGasto.getTotalByType(categoryArray[3]);
+        int gastoEducacion = dbGasto.getTotalByType(categoryArray[4]);
+        int gastoDeuda = dbGasto.getTotalByType(categoryArray[5]);
+        int gastoAhorro = dbGasto.getTotalByType(categoryArray[6]);
 
 
         String Cadena1 = arriendo+" / "+gastoArriendo;
@@ -101,6 +110,9 @@ public class ResumenActivity extends AppCompatActivity {
         String Cadena6 = deuda+" / "+gastoDeuda;
         String Cadena7 = ahorro+" / "+gastoAhorro;
 
+
+
+
         //MOSTRAR LOS VALORES GUARDADOS
         txtResumenArriendp.setText(Cadena1);
         txtResumenAlimentacion.setText(Cadena2);
@@ -110,12 +122,61 @@ public class ResumenActivity extends AppCompatActivity {
         txtResumenDeuda.setText(Cadena6);
         txtResumenAhorro.setText(Cadena7);
 
-        //falta texto
+        //MOSTRAR ALERTA
+        if(arriendo<gastoArriendo){
+            alert1.setVisibility(View.VISIBLE);
+            mostrarDialogoExcesoCategoria();
+        }if(alimentacion<gastoAlimentacion){
+            alert2.setVisibility(View.VISIBLE);
+            mostrarDialogoExcesoCategoria();
+        }if(transporte<gastoTransporte){
+            alert3.setVisibility(View.VISIBLE);
+            mostrarDialogoExcesoCategoria();
+        }if(servicios<gastoServicio){
+            alert4.setVisibility(View.VISIBLE);
+            mostrarDialogoExcesoCategoria();
+        }if(educacion<gastoEducacion){
+            alert5.setVisibility(View.VISIBLE);
+            mostrarDialogoExcesoCategoria();
+        }if(deuda<gastoDeuda){
+            alert6.setVisibility(View.VISIBLE);
+            mostrarDialogoExcesoCategoria();
+        }if(ahorro<gastoAhorro){
+            alert7.setVisibility(View.VISIBLE);
+            mostrarDialogoExcesoCategoria();
+        }
 
+
+        //Mostrar HTTPRequest
         mostrarFeriado();
         mostrarDolar();
         mostrarUF();
     }
+
+
+    public void deshabilitarAlert(){
+
+        alert1.setVisibility(View.GONE);
+        alert2.setVisibility(View.GONE);
+        alert3.setVisibility(View.GONE);
+        alert4.setVisibility(View.GONE);
+        alert5.setVisibility(View.GONE);
+        alert6.setVisibility(View.GONE);
+        alert7.setVisibility(View.GONE);
+    }
+
+    public void mostrarDialogoExcesoCategoria() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(R.string.alertafocategoria)
+                .setPositiveButton("OK", (dialog, id) -> {
+                    dialog.dismiss(); // Cierra el diálogo
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+
+
 
     public void mostrarUF(){
 
@@ -283,9 +344,9 @@ public class ResumenActivity extends AppCompatActivity {
                 return true;
             case R.id.item4DeletAcc:
                 AlertDialog.Builder builder = new AlertDialog.Builder(ResumenActivity.this);
-                builder.setTitle("Eliminar cuenta")
-                        .setMessage("¿Está seguro que desea eliminar la cuenta?")
-                        .setPositiveButton("Sí", (dialog, which) -> {
+                builder.setTitle(R.string.EliminarCuenta)
+                        .setMessage(R.string.SeguroEliminar)
+                        .setPositiveButton(R.string.Si, (dialog, which) -> {
                             SharedPreferences preferences = getSharedPreferences("MyPreferences", MODE_PRIVATE);
                             SharedPreferences.Editor editor = preferences.edit();
                             editor.remove("Usuario");

@@ -17,6 +17,8 @@ import com.example.evaluacion3.Entidades.Gasto.viewGastoActivity;
 import com.example.evaluacion3.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,7 +27,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     Context context;
     public static ArrayList<Gasto> list;
     public static ArrayList<Gasto> originallist;
-
+    private boolean reverseOrder = false;
 
     public Adapter(Context context, ArrayList<Gasto> list) {
         this.context = context;
@@ -112,6 +114,27 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             list.clear();
             list.addAll(colleccion);
         }
+        notifyDataSetChanged();
+    }
+
+
+    //Cambiar Orden
+    @SuppressLint("NotifyDataSetChanged")
+    public void orderFromFirstToLast() {
+        Collections.sort(list, (gasto1, gasto2) -> gasto1.getProducto().compareToIgnoreCase(gasto2.getProducto()));
+
+        notifyDataSetChanged();
+    }
+    @SuppressLint("NotifyDataSetChanged")
+    public void orderFromLastToFirst() {
+        Collections.sort(list, (gasto1, gasto2) -> gasto2.getProducto().compareToIgnoreCase(gasto1.getProducto()));
+
+        notifyDataSetChanged();
+    }
+    @SuppressLint("NotifyDataSetChanged")
+    public void orderByAlphabet() {
+        Collections.sort(list, (gasto1, gasto2) -> gasto1.getProducto().compareToIgnoreCase(gasto2.getProducto()));
+
         notifyDataSetChanged();
     }
 

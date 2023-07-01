@@ -11,4 +11,11 @@
         <item>@string/category_7</item>
     </string-array>
 
+
+    <string-array name="opciones_orden">
+        <item>@string/orden1</item>
+        <item>@string/orden2</item>
+        <item>@string/orden3</item>
+    </string-array>
+
 </resources>
