@@ -154,7 +154,6 @@ public class PresupuestoActivity extends AppCompatActivity {
         TextWatcher textWatcher = new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // No se requiere implementación aquí
             }
 
             @Override

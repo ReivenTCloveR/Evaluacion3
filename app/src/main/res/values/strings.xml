@@ -11,6 +11,8 @@
     <string name="dialog_content">Este monton es el presupuesto total con el cual usted dispone para su hogar</string>
     <string name="alertaforedit">El monton Total debe ser menor a la suma de los componentes </string>
     <string name="alertafocategoria"> Has excedido el monto de una categoría </string>
+    <string name="reset"> Los valores se han reiniciado</string>
+    <string name="deletPrducto">¿Desea eliminar este producto?</string>
 
     <!--PANTALLA EMERGENTE BTN-->
     <string name="IngreseMonto"> Ingrese un Monto </string>
@@ -22,6 +24,11 @@
     <!--TOAST-->
     <string name="addProducto">SE AÑADIO EL PRODUCTO A SU LISTA</string>
     <string name="addFail">ERROR AL AÑADIR EL PRODUCTO</string>
+    <string name="llenarCampos">DEBE LLENAR LOS CAMPOS OBLIGATORIOS</string>
+    <string name="editFail">Error al modificar su Producto</string>
+    <string name="editReady">Modificacion realizada</string>
+    <string name="ResetDay">HOY SE LLEVARA ACABO EL REINICIO DE TUS MONTOS</string>
+
 
     <!--INDICADORES-->
     <string name="Nombre">Nombre: </string>

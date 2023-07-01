@@ -14,10 +14,14 @@
     <string name="EliminarCuenta"> Eliminar cuenta </string>
     <string name="SeguroEliminar"> ¿Está seguro que desea eliminar la cuenta? </string>
     <string name="Si">Sí</string>
+    <string name="reset"> Los valores se han reiniciado</string>
     <!--TOAST-->
     <string name="addProducto">SE AÑADIO EL PRODUCTO A SU LISTA</string>
     <string name="addFail">ERROR AL AÑADIR EL PRODUCTO</string>
-
+    <string name="llenarCampos">DEBE LLENAR LOS CAMPOS OBLIGATORIOS</string>
+    <string name="editFail">Error al modificar su Producto</string>
+    <string name="editReady">Modificacion realizada</string>
+    <string name="ResetDay">HOY SE LLEVARA ACABO EL REINICIO DE TUS MONTOS</string>
     <!--INDICADORES-->
     <string name="Nombre">Nombre: </string>
     <string name="Fechas">Fecha: </string>
@@ -29,7 +33,7 @@
     <!--PANTALLA EMERGENTE BTN-->
     <string name="IngreseMonto"> Ingrese un Monto </string>
     <string name="Aceptar"> Aceptar </string>
-
+    <string name="deletPrducto">¿Desea eliminar este producto?</string>
 
     <!--VALIDADORES -->
     <string name="alerta">Ingrese un monto</string>

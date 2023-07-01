@@ -47,19 +47,16 @@ public class GastosActivity extends AppCompatActivity implements SearchView.OnQu
         adapterItems = new ArrayAdapter<>(this, R.layout.item_list_day, ordenArray);
         actxt_orden.setAdapter(adapterItems);
 
-        actxt_orden.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String selectedOrder = parent.getItemAtPosition(position).toString();
-                // Guardar el valor seleccionado en la variable "orden"
-                orden = selectedOrder;
-                if (orden != null && orden.equals(ordenArray[0])) {
-                    adapter.orderFromFirstToLast();
-                }else if (orden != null && orden.equals(ordenArray[1])){
-                    adapter.orderFromLastToFirst();
-                } else if (orden != null && orden.equals(ordenArray[2])) {
-                    adapter.orderByAlphabet();
-                }
+        actxt_orden.setOnItemClickListener((parent, view, position, id) -> {
+            String selectedOrder = parent.getItemAtPosition(position).toString();
+            // Guardar el valor seleccionado en la variable "orden"
+            orden = selectedOrder;
+            if (orden != null && orden.equals(ordenArray[0])) {
+                adapter.orderFromFirstToLast();
+            }else if (orden != null && orden.equals(ordenArray[1])){
+                adapter.orderFromLastToFirst();
+            } else if (orden != null && orden.equals(ordenArray[2])) {
+                adapter.orderByAlphabet();
             }
         });
 

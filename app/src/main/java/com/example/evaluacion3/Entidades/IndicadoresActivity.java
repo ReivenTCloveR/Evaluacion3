@@ -68,7 +68,7 @@ public class IndicadoresActivity extends AppCompatActivity {
                                 String nombre = feriado.getString("nombre");
                                 String fecha = feriado.getString("fecha");
 
-                                sb.append(R.string.Nombre).append(nombre).append("\n");
+                                sb.append(getString(R.string.Nombre)).append(nombre).append("\n");
                                 sb.append(fecha).append("\n\n");
                             }
 
@@ -109,8 +109,8 @@ public class IndicadoresActivity extends AppCompatActivity {
                                 String fecha = dataObject.getString("fecha");
                                 double valor = dataObject.getDouble("valor");
 
-                                sb1.append(R.string.Fechas).append(fecha).append("\n");
-                                sb1.append(R.string.Valor).append(valor).append("\n\n");
+                                sb1.append(getString(R.string.Fechas)).append(fecha).append("\n");
+                                sb1.append(getString(R.string.Valor)).append(valor).append("\n\n");
                             }
 
                             String result1 = sb1.toString();
@@ -150,8 +150,8 @@ public class IndicadoresActivity extends AppCompatActivity {
                                 String fecha = dataObject.getString("fecha");
                                 double valor = dataObject.getDouble("valor");
 
-                                sb1.append(R.string.Fechas).append(fecha).append("\n");
-                                sb1.append(R.string.Valor).append(valor).append("\n\n");
+                                sb1.append(getString(R.string.Fechas)).append(fecha).append("\n");
+                                sb1.append(getString(R.string.Valor)).append(valor).append("\n\n");
                             }
 
                             String result1 = sb1.toString();

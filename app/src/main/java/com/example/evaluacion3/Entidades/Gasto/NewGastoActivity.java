@@ -105,9 +105,9 @@ public class NewGastoActivity extends AppCompatActivity {
                 long id = dbProducto.insertarGasto(edittxt_Producto.getText().toString(),Integer.parseInt(edittxt_Costo.getText().toString()), (int) longitud, (int) latitud, category);
 
                 if (id > 0) {
-                    Toast.makeText(this, R.string.addProducto, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, getString(R.string.addProducto), Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(this, R.string.addFail, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this,  getString(R.string.addFail), Toast.LENGTH_SHORT).show();
                 }
             }
         });

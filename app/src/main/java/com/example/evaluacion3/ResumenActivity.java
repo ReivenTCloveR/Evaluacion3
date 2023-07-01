@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.example.evaluacion3.BD.DbGasto;
@@ -122,28 +123,30 @@ public class ResumenActivity extends AppCompatActivity {
         txtResumenDeuda.setText(Cadena6);
         txtResumenAhorro.setText(Cadena7);
 
+        String mensaje = getString(R.string.alertafocategoria);
+
         //MOSTRAR ALERTA
         if(arriendo<gastoArriendo){
             alert1.setVisibility(View.VISIBLE);
-            mostrarDialogoExcesoCategoria();
+            mostrarDialogoExcesoCategoria(mensaje);
         }if(alimentacion<gastoAlimentacion){
             alert2.setVisibility(View.VISIBLE);
-            mostrarDialogoExcesoCategoria();
+            mostrarDialogoExcesoCategoria(mensaje);
         }if(transporte<gastoTransporte){
             alert3.setVisibility(View.VISIBLE);
-            mostrarDialogoExcesoCategoria();
+            mostrarDialogoExcesoCategoria(mensaje);
         }if(servicios<gastoServicio){
             alert4.setVisibility(View.VISIBLE);
-            mostrarDialogoExcesoCategoria();
+            mostrarDialogoExcesoCategoria(mensaje);
         }if(educacion<gastoEducacion){
             alert5.setVisibility(View.VISIBLE);
-            mostrarDialogoExcesoCategoria();
+            mostrarDialogoExcesoCategoria(mensaje);
         }if(deuda<gastoDeuda){
             alert6.setVisibility(View.VISIBLE);
-            mostrarDialogoExcesoCategoria();
+            mostrarDialogoExcesoCategoria(mensaje);
         }if(ahorro<gastoAhorro){
             alert7.setVisibility(View.VISIBLE);
-            mostrarDialogoExcesoCategoria();
+            mostrarDialogoExcesoCategoria(mensaje);
         }
 
 
@@ -151,7 +154,52 @@ public class ResumenActivity extends AppCompatActivity {
         mostrarFeriado();
         mostrarDolar();
         mostrarUF();
+
+
+        resetMensual();
+        alertaReset();
     }
+
+    public void alertaReset(){
+
+        SharedPreferences preferences = getSharedPreferences("MyPreferences", MODE_PRIVATE);
+        Calendar calendar = Calendar.getInstance();
+        int dia = preferences.getInt("dia", 0);
+        int diaActual = calendar.get(Calendar.DAY_OF_MONTH);
+        if(dia==diaActual){
+            Toast.makeText(this, getString(R.string.ResetDay), Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    public void resetMensual(){
+
+    SharedPreferences preferences = getSharedPreferences("MyPreferences", MODE_PRIVATE);
+    Calendar calendar = Calendar.getInstance();
+    DbGasto dbGasto = new DbGasto(ResumenActivity.this);
+    int dia = preferences.getInt("dia", 0);
+    int diaActual = calendar.get(Calendar.DAY_OF_MONTH);
+    int hora = calendar.get(Calendar.HOUR_OF_DAY);
+    int minute = calendar.get(Calendar.MINUTE);
+
+    if(dia == diaActual && hora==23 && minute == 59){
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.remove("arriendo");
+        editor.putInt("montoInicial", 0);
+        editor.putInt("arriendo", 0);
+        editor.putInt("alimentacion", 0);
+        editor.putInt("transporte", 0);
+        editor.putInt("servicios", 0);
+        editor.putInt("educacion", 0);
+        editor.putInt("deuda", 0);
+        editor.putInt("ahorro", 0);
+        editor.apply();
+        dbGasto.deleteAllFromTable("t_gastos");
+        String mensaje = getString(R.string.alertafocategoria);
+        mostrarDialogoExcesoCategoria(mensaje);
+    }
+
+}
 
 
     public void deshabilitarAlert(){
@@ -165,9 +213,10 @@ public class ResumenActivity extends AppCompatActivity {
         alert7.setVisibility(View.GONE);
     }
 
-    public void mostrarDialogoExcesoCategoria() {
+    public void mostrarDialogoExcesoCategoria(String mensaje) {
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(R.string.alertafocategoria)
+        builder.setMessage(mensaje)
                 .setPositiveButton("OK", (dialog, id) -> {
                     dialog.dismiss(); // Cierra el diálogo
                 });

@@ -106,7 +106,7 @@ public class viewGastoActivity extends AppCompatActivity implements OnMapReadyCa
         fabtn_delet.setOnClickListener(v -> {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(viewGastoActivity.this);
-            builder.setMessage("¿Desea eliminar este producto?").setPositiveButton("Si", (dialog, i) -> {
+            builder.setMessage(getString(R.string.deletPrducto)  ).setPositiveButton(getString(R.string.Si), (dialog, i) -> {
                 if(dbGasto.eliminarGasto(id)){
                     lista();
                 }
@@ -133,14 +133,14 @@ public class viewGastoActivity extends AppCompatActivity implements OnMapReadyCa
 
 
                     if (ready[0]){
-                        Toast.makeText(viewGastoActivity.this, "Modificacion realizada", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(viewGastoActivity.this, getString(R.string.editReady), Toast.LENGTH_SHORT).show();
                         viewActivity();
                     }else {
-                        Toast.makeText(viewGastoActivity.this, "Error al modificar su Producto", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(viewGastoActivity.this,  getString(R.string.editFail), Toast.LENGTH_SHORT).show();
                         viewActivity();
                     }
                 }else {
-                    Toast.makeText(viewGastoActivity.this, "DEBE LLENAR LOS CAMPOS OBLIGATORIOS", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(viewGastoActivity.this, getString(R.string.llenarCampos), Toast.LENGTH_SHORT).show();
                     viewActivity();
                 }
             });

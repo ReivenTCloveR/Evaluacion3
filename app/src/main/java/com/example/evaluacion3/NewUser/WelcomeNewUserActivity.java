@@ -46,9 +46,9 @@ public class WelcomeNewUserActivity extends AppCompatActivity {
 
         EditText editTextMonto = dialogView.findViewById(R.id.editTextMonto);
 
-        builder.setTitle(R.string.IngreseMonto);
+        builder.setTitle(getString(R.string.IngreseMonto));
 
-        builder.setPositiveButton(R.string.Aceptar, (dialog, which) -> {
+        builder.setPositiveButton(getString(R.string.Aceptar), (dialog, which) -> {
             String monto = editTextMonto.getText().toString();
             if(!monto.equals("")){
                 Intent intent = new Intent(WelcomeNewUserActivity.this, FormActivity.class);
@@ -56,7 +56,7 @@ public class WelcomeNewUserActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }else {
-                Toast.makeText(this, R.string.alerta, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.alerta), Toast.LENGTH_SHORT).show();
             }
 
         });

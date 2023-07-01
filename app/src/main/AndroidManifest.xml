@@ -49,11 +49,6 @@
                 android:value=".Entidades.GastosActivity" />
         </activity>
         <activity
-            android:name=".Entidades.MainActivity"
-            android:exported="false"
-            android:label="@string/title_activity_main"
-            android:theme="@style/Theme.Evaluacion3.NoActionBar" />
-        <activity
             android:name=".Entidades.PresupuestoActivity"
             android:exported="false">
             <meta-data
